@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Classic Offline Games Room – 31 Classic Games, No Internet Needed</title>
-  <meta name="description" content="31 classic games in one app. Chess, Sudoku, Minesweeper, Snake, Solitaire and more. Play anywhere, no internet required. Free on the App Store and Google Play." />
-  <meta property="og:title" content="Classic Offline Games Room" />
-  <meta property="og:description" content="31 classic games. No internet. No fuss. Free on iOS and Android." />
-  <meta property="og:image" content="IMG_0191.PNG" />
+  <title>Colin Differ – Apps</title>
+  <meta name="description" content="iOS and Android apps by Colin Differ. Yonder Podcast and Classic Offline Games Room." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --coral: #e8534a;
-      --teal: #4abfa8;
-      --gold: #e8a830;
+      --coral:  #e8534a;
+      --teal:   #4abfa8;
+      --gold:   #e8a830;
       --purple: #7c5cbf;
-      --blue: #4ab8d8;
-      --green: #4ab870;
-      --bg: #f7f5f2;
-      --card: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666;
-      --radius: 20px;
+      --blue:   #4ab8d8;
+      --green:  #4ab870;
+      --bg:     #f7f5f2;
+      --card:   #ffffff;
+      --text:   #1a1a1a;
+      --muted:  #666;
+      --radius: 24px;
     }
 
     html { scroll-behavior: smooth; }
@@ -53,26 +50,15 @@
       letter-spacing: -0.3px;
     }
     nav .logo span { color: var(--coral); }
-    .nav-cta {
-      background: var(--text);
-      color: #fff;
-      text-decoration: none;
-      padding: 8px 18px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      transition: opacity .2s;
-    }
-    .nav-cta:hover { opacity: 0.8; }
 
     /* ── HERO ── */
     .hero {
       text-align: center;
-      padding: 72px 24px 60px;
-      max-width: 680px;
+      padding: 72px 24px 52px;
+      max-width: 600px;
       margin: 0 auto;
     }
-    .badge {
+    .hero-eyebrow {
       display: inline-block;
       background: var(--coral);
       color: #fff;
@@ -85,269 +71,118 @@
       margin-bottom: 20px;
     }
     .hero h1 {
-      font-size: clamp(36px, 8vw, 64px);
+      font-size: clamp(34px, 7vw, 56px);
       font-weight: 900;
       line-height: 1.05;
       letter-spacing: -2px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-    .hero h1 em {
-      font-style: normal;
-      color: var(--coral);
-    }
+    .hero h1 em { font-style: normal; color: var(--coral); }
     .hero p {
-      font-size: 18px;
+      font-size: 17px;
       color: var(--muted);
-      margin-bottom: 36px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-group {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .store-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--text);
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 14px;
-      font-size: 14px;
-      font-weight: 700;
-      transition: transform .15s, opacity .15s;
-      min-width: 160px;
-    }
-    .store-btn:hover { transform: translateY(-2px); opacity: 0.9; }
-    .store-btn svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
-    .store-btn-label { text-align: left; line-height: 1.2; }
-    .store-btn-sub { font-size: 10px; font-weight: 400; opacity: 0.75; display: block; }
-    .store-btn-main { font-size: 15px; font-weight: 800; display: block; }
-
-    /* ── SCREENSHOTS ── */
-    .screenshots {
-      padding: 20px 0 60px;
-      overflow: hidden;
-    }
-    .screenshots-track {
-      display: flex;
-      gap: 16px;
-      padding: 0 24px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .screenshots-track::-webkit-scrollbar { display: none; }
-    .screenshots-track img {
-      height: 480px;
-      width: auto;
-      border-radius: 28px;
-      box-shadow: 0 16px 48px rgba(0,0,0,0.14);
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      object-fit: cover;
+      max-width: 440px;
+      margin: 0 auto;
     }
 
-    /* ── STATS ── */
-    .stats {
+    /* ── APP CARDS ── */
+    .apps-section {
+      padding: 16px 24px 80px;
+      max-width: 900px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      max-width: 600px;
-      margin: 0 auto 80px;
-      padding: 0 24px;
-      background: rgba(0,0,0,0.06);
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 24px;
+    }
+
+    .app-card {
+      background: var(--card);
       border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .stat {
-      background: var(--card);
-      text-align: center;
-      padding: 28px 16px;
-    }
-    .stat:first-child { border-radius: var(--radius) 0 0 var(--radius); }
-    .stat:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
-    .stat-number {
-      font-size: 36px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      color: var(--coral);
-    }
-    .stat-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 2px;
+      padding: 36px 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    /* ── SECTION TITLE ── */
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 0 24px;
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
-    .section-title h2 {
-      font-size: clamp(26px, 5vw, 40px);
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-    .section-title p { color: var(--muted); font-size: 16px; }
 
-    /* ── GAMES GRID ── */
-    .games-section { padding: 0 24px 80px; max-width: 900px; margin: 0 auto; }
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 12px;
-    }
-    .game-tile {
-      background: var(--card);
+    .app-icon {
+      width: 64px;
+      height: 64px;
       border-radius: 16px;
-      padding: 16px 12px;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      transition: transform .15s;
-    }
-    .game-tile:hover { transform: translateY(-3px); }
-    .game-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      margin: 0 auto 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 22px;
+      font-size: 30px;
+      flex-shrink: 0;
     }
-    .game-name {
+    .app-icon-podcast  { background: linear-gradient(135deg, #6c3fc5 0%, #a259f7 100%); }
+    .app-icon-games    { background: linear-gradient(135deg, #e8534a 0%, #f0836e 100%); }
+
+    .app-card-title { font-size: 20px; font-weight: 900; letter-spacing: -0.5px; }
+    .app-card-sub   { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    .app-card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: var(--bg);
+      color: var(--muted);
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.4px;
-      color: var(--text);
-    }
-    .game-category {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    .c-coral  { background: #fde8e7; }
-    .c-teal   { background: #e0f5f1; }
-    .c-gold   { background: #fdf3e0; }
-    .c-purple { background: #ede8f7; }
-    .c-blue   { background: #e0f3fb; }
-    .c-green  { background: #e3f5e8; }
-
-    /* ── FEATURES ── */
-    .features-section { padding: 0 24px 80px; max-width: 900px; margin: 0 auto; }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 16px;
-    }
-    .feature-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    .feature-icon { font-size: 32px; margin-bottom: 14px; }
-    .feature-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 6px; }
-    .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.5; }
-
-    /* ── PLATFORMS ── */
-    .platforms-section {
-      padding: 0 24px 80px;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .platforms-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 0;
-    }
-    .platform-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 32px 24px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-      text-decoration: none;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      transition: transform .15s, box-shadow .15s;
-    }
-    .platform-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
-    .platform-card svg { width: 40px; height: 40px; fill: var(--text); }
-    .platform-card h3 { font-size: 15px; font-weight: 800; }
-    .platform-card p { font-size: 13px; color: var(--muted); }
-    .platform-dl {
-      margin-top: 4px;
-      background: var(--text);
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 8px 18px;
+      padding: 4px 10px;
       border-radius: 100px;
     }
 
-    /* ── CTA BANNER ── */
-    .cta-banner {
-      background: var(--text);
-      color: #fff;
-      text-align: center;
-      padding: 64px 24px;
-      margin: 0 24px 80px;
-      border-radius: 28px;
-      max-width: 852px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .cta-banner h2 {
-      font-size: clamp(24px, 5vw, 40px);
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 12px;
-    }
-    .cta-banner p { color: rgba(255,255,255,0.6); font-size: 16px; margin-bottom: 32px; }
-    .cta-store-group {
+    .store-btns {
       display: flex;
-      gap: 12px;
-      justify-content: center;
       flex-wrap: wrap;
+      gap: 10px;
     }
-    .btn-white {
+    .store-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: #fff;
-      color: var(--text);
+      gap: 8px;
+      background: var(--text);
+      color: #fff;
       text-decoration: none;
-      padding: 12px 22px;
-      border-radius: 14px;
-      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 13px;
       font-weight: 700;
-      transition: transform .15s;
+      transition: transform .15s, opacity .15s;
     }
-    .btn-white:hover { transform: translateY(-2px); }
-    .btn-white svg { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
-    .btn-white-label { text-align: left; line-height: 1.2; }
-    .btn-white-sub { font-size: 10px; font-weight: 400; opacity: 0.6; display: block; }
-    .btn-white-main { font-size: 15px; font-weight: 800; display: block; }
+    .store-btn:hover { transform: translateY(-2px); opacity: 0.85; }
+    .store-btn svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+    .store-btn-label { text-align: left; line-height: 1.2; }
+    .store-btn-sub  { font-size: 9px;  font-weight: 400; opacity: 0.7; display: block; }
+    .store-btn-main { font-size: 13px; font-weight: 800; display: block; }
+
+    .app-links {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+    }
+    .app-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .app-links a:hover { color: var(--text); text-decoration: underline; }
 
     /* ── FOOTER ── */
     footer {
@@ -359,12 +194,10 @@
     }
     footer a { color: var(--muted); text-decoration: none; margin: 0 10px; }
     footer a:hover { color: var(--text); }
-    footer .footer-links { margin-bottom: 12px; }
+    footer .footer-links { margin-bottom: 10px; }
 
-    @media (max-width: 480px) {
-      .stats { grid-template-columns: repeat(3, 1fr); }
-      .screenshots-track img { height: 360px; }
-      .platforms-grid { grid-template-columns: 1fr; }
+    @media (max-width: 500px) {
+      .apps-section { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -372,196 +205,106 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">Classic <span>Offline</span> Games Room</div>
-    <a class="nav-cta" href="https://apps.apple.com/app/id6759455066">Download Free</a>
+    <div class="logo"><span>Colin</span> Differ</div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="badge">Free on iOS &amp; Android</div>
-    <h1>31 Classic Games.<br><em>Zero Internet.</em></h1>
-    <p>Chess, Sudoku, Snake, Solitaire, Mine Finder and 26 more. Play anywhere — on a plane, underground, wherever.</p>
-    <div class="cta-group">
-      <!-- App Store -->
-      <a class="store-btn" href="https://apps.apple.com/app/id6759455066">
-        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        <span class="store-btn-label">
-          <span class="store-btn-sub">Download on the</span>
-          <span class="store-btn-main">App Store</span>
-        </span>
-      </a>
-      <!-- Google Play -->
-      <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.offlinegamesroom.app">
-        <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.64.24.99.2l.1-.04 11.05-6.37-2.4-2.41-9.74 8.62zm-1.1-19.5C1.74 4.6 1.5 5.03 1.5 5.6v12.8c0 .57.24 1 .58 1.27l.07.06 7.17-7.17v-.17L2.08 4.26zm15.55 10.17-2.38-2.37-2.39 2.38 2.39 2.39 2.38-2.4zm1.72-7.59-3.1-1.79-2.72 2.72 2.72 2.71 3.1-1.79c.89-.51.89-1.35 0-1.85z"/></svg>
-        <span class="store-btn-label">
-          <span class="store-btn-sub">Get it on</span>
-          <span class="store-btn-main">Google Play</span>
-        </span>
-      </a>
-    </div>
+    <div class="hero-eyebrow">iOS &amp; Android Apps</div>
+    <h1>Apps built for<br><em>real life.</em></h1>
+    <p>Two free apps. No nonsense. Available on the App Store and Google Play.</p>
   </section>
 
-  <!-- SCREENSHOTS -->
-  <div class="screenshots">
-    <div class="screenshots-track">
-      <img src="IMG_0191.PNG" alt="Classic Offline Games Room – Home screen" />
-      <img src="IMG_0193.PNG" alt="Sudoku" />
-      <img src="IMG_0194.PNG" alt="Chess" />
-      <img src="IMG_0195.PNG" alt="Water Sort" />
-      <img src="IMG_0196.PNG" alt="Spades" />
-      <img src="IMG_0197.PNG" alt="Hearts" />
-      <img src="IMG_0192.PNG" alt="Mine Finder" />
-    </div>
-  </div>
+  <!-- APP CARDS -->
+  <section class="apps-section">
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat">
-      <div class="stat-number">31</div>
-      <div class="stat-label">Games</div>
+    <!-- Yonder Podcast -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <div class="app-icon app-icon-podcast">🎙️</div>
+        <div>
+          <div class="app-card-title">Yonder Podcast</div>
+          <div class="app-card-sub">Free podcast player</div>
+        </div>
+      </div>
+      <p class="app-card-desc">
+        A clean, fast podcast player. Search and subscribe to any podcast, sync your library across devices, download episodes for offline listening, and pick up exactly where you left off — on any device.
+      </p>
+      <div class="app-tags">
+        <span class="tag">Podcast Player</span>
+        <span class="tag">Offline Playback</span>
+        <span class="tag">Cloud Sync</span>
+        <span class="tag">Free</span>
+      </div>
+      <div class="store-btns">
+        <a class="store-btn" href="https://apps.apple.com/app/yonder-podcast/id6746232591">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="store-btn-label">
+            <span class="store-btn-sub">Download on the</span>
+            <span class="store-btn-main">App Store</span>
+          </span>
+        </a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.yonderpodcast.app">
+          <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.64.24.99.2l.1-.04 11.05-6.37-2.4-2.41-9.74 8.62zm-1.1-19.5C1.74 4.6 1.5 5.03 1.5 5.6v12.8c0 .57.24 1 .58 1.27l.07.06 7.17-7.17v-.17L2.08 4.26zm15.55 10.17-2.38-2.37-2.39 2.38 2.39 2.39 2.38-2.4zm1.72-7.59-3.1-1.79-2.72 2.72 2.72 2.71 3.1-1.79c.89-.51.89-1.35 0-1.85z"/></svg>
+          <span class="store-btn-label">
+            <span class="store-btn-sub">Get it on</span>
+            <span class="store-btn-main">Google Play</span>
+          </span>
+        </a>
+      </div>
+      <div class="app-links">
+        <a href="https://colindiffer.github.io/privacy_policy_podcast.html">Privacy Policy</a>
+        <a href="https://colindiffer.github.io/delete_account_podcast.html">Delete Account</a>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-number">0</div>
-      <div class="stat-label">MB of Data</div>
-    </div>
-    <div class="stat">
-      <div class="stat-number">Free</div>
-      <div class="stat-label">To Download</div>
-    </div>
-  </div>
 
-  <!-- GAMES -->
-  <section class="games-section">
-    <div class="section-title">
-      <h2>Every game included</h2>
-      <p>Puzzles, cards, strategy, arcade — something for everyone.</p>
+    <!-- Classic Offline Games Room -->
+    <div class="app-card">
+      <div class="app-card-header">
+        <div class="app-icon app-icon-games">🎮</div>
+        <div>
+          <div class="app-card-title">Classic Offline Games Room</div>
+          <div class="app-card-sub">31 games, no internet needed</div>
+        </div>
+      </div>
+      <p class="app-card-desc">
+        Chess, Sudoku, Snake, Solitaire, Mine Finder and 26 more classic games — all in one free app. Works completely offline. No accounts, no tracking, no internet required. Ever.
+      </p>
+      <div class="app-tags">
+        <span class="tag">31 Games</span>
+        <span class="tag">100% Offline</span>
+        <span class="tag">No Sign-up</span>
+        <span class="tag">Free</span>
+      </div>
+      <div class="store-btns">
+        <a class="store-btn" href="https://apps.apple.com/app/id6759455066">
+          <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <span class="store-btn-label">
+            <span class="store-btn-sub">Download on the</span>
+            <span class="store-btn-main">App Store</span>
+          </span>
+        </a>
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.offlinegamesroom.app">
+          <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.64.24.99.2l.1-.04 11.05-6.37-2.4-2.41-9.74 8.62zm-1.1-19.5C1.74 4.6 1.5 5.03 1.5 5.6v12.8c0 .57.24 1 .58 1.27l.07.06 7.17-7.17v-.17L2.08 4.26zm15.55 10.17-2.38-2.37-2.39 2.38 2.39 2.39 2.38-2.4zm1.72-7.59-3.1-1.79-2.72 2.72 2.72 2.71 3.1-1.79c.89-.51.89-1.35 0-1.85z"/></svg>
+          <span class="store-btn-label">
+            <span class="store-btn-sub">Get it on</span>
+            <span class="store-btn-main">Google Play</span>
+          </span>
+        </a>
+      </div>
+      <div class="app-links">
+        <a href="https://colindiffer.github.io/privacy_policy_online_game.html">Privacy Policy</a>
+      </div>
     </div>
-    <div class="games-grid">
-      <div class="game-tile"><div class="game-icon c-coral">♟</div><div class="game-name">Chess</div><div class="game-category">Strategy</div></div>
-      <div class="game-tile"><div class="game-icon c-teal">🔢</div><div class="game-name">Sudoku</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-gold">🐍</div><div class="game-name">Snake</div><div class="game-category">Arcade</div></div>
-      <div class="game-tile"><div class="game-icon c-purple">💣</div><div class="game-name">Mine Finder</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-blue">🃏</div><div class="game-name">Solitaire</div><div class="game-category">Cards</div></div>
-      <div class="game-tile"><div class="game-icon c-green">2048</div><div class="game-name">2048</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-coral">♜</div><div class="game-name">Checkers</div><div class="game-category">Strategy</div></div>
-      <div class="game-tile"><div class="game-icon c-teal">🔵</div><div class="game-name">Reversi</div><div class="game-category">Strategy</div></div>
-      <div class="game-tile"><div class="game-icon c-gold">🧩</div><div class="game-name">Mahjong</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-purple">🕹</div><div class="game-name">Flappy Wings</div><div class="game-category">Arcade</div></div>
-      <div class="game-tile"><div class="game-icon c-blue">💧</div><div class="game-name">Water Sort</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-coral">♥</div><div class="game-name">Hearts</div><div class="game-category">Cards</div></div>
-      <div class="game-tile"><div class="game-icon c-teal">♠</div><div class="game-name">Spades</div><div class="game-category">Cards</div></div>
-      <div class="game-tile"><div class="game-icon c-gold">🕷</div><div class="game-name">Spider Solitaire</div><div class="game-category">Cards</div></div>
-      <div class="game-tile"><div class="game-icon c-purple">🆓</div><div class="game-name">FreeCell</div><div class="game-category">Cards</div></div>
-      <div class="game-tile"><div class="game-icon c-blue">⏬</div><div class="game-name">Sand Flow</div><div class="game-category">Arcade</div></div>
-      <div class="game-tile"><div class="game-icon c-green">🎯</div><div class="game-name">Dominoes</div><div class="game-category">Strategy</div></div>
-      <div class="game-tile"><div class="game-icon c-coral">🔤</div><div class="game-name">Hangman</div><div class="game-category">Word</div></div>
-      <div class="game-tile"><div class="game-icon c-teal">💬</div><div class="game-name">Word Guess</div><div class="game-category">Word</div></div>
-      <div class="game-tile"><div class="game-icon c-gold">🔍</div><div class="game-name">Word Search</div><div class="game-category">Word</div></div>
-      <div class="game-tile"><div class="game-icon c-purple">🧠</div><div class="game-name">Memory Match</div><div class="game-category">Memory</div></div>
-      <div class="game-tile"><div class="game-icon c-blue">💡</div><div class="game-name">Simon Says</div><div class="game-category">Memory</div></div>
-      <div class="game-tile"><div class="game-icon c-coral">🚢</div><div class="game-name">Sea Battle</div><div class="game-category">Strategy</div></div>
-      <div class="game-tile"><div class="game-icon c-teal">🔐</div><div class="game-name">Code Breaker</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-gold">🟡</div><div class="game-name">Four in a Row</div><div class="game-category">Strategy</div></div>
-      <div class="game-tile"><div class="game-icon c-purple">❌</div><div class="game-name">Tic Tac Toe</div><div class="game-category">Classic</div></div>
-      <div class="game-tile"><div class="game-icon c-blue">🗺</div><div class="game-name">Maze</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-green">🧱</div><div class="game-name">Brick Breaker</div><div class="game-category">Arcade</div></div>
-      <div class="game-tile"><div class="game-icon c-coral">🟫</div><div class="game-name">Wood Blocks</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-teal">⬇</div><div class="game-name">Block Drop</div><div class="game-category">Puzzle</div></div>
-      <div class="game-tile"><div class="game-icon c-gold">✂</div><div class="game-name">Rock Paper Scissors</div><div class="game-category">Classic</div></div>
-    </div>
+
   </section>
-
-  <!-- FEATURES -->
-  <section class="features-section">
-    <div class="section-title">
-      <h2>Built for real life</h2>
-      <p>No gimmicks. Just games that work.</p>
-    </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">✈️</div>
-        <h3>Truly Offline</h3>
-        <p>Every single game works with zero internet. Plane mode, underground, middle of nowhere — no problem.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎮</div>
-        <h3>31 Games in One</h3>
-        <p>Chess to Sudoku, Snake to Solitaire. No need to download a separate app for every game.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🆓</div>
-        <h3>Free to Download</h3>
-        <p>All 31 games are free. No paywalls, no locked content, no subscriptions required.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎨</div>
-        <h3>Clean Design</h3>
-        <p>Simple, distraction-free UI. Games look great and play well on every iPhone and Android device.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>Private by Default</h3>
-        <p>Game progress is stored locally on your device. No accounts, no sign-ups, no tracking.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🧩</div>
-        <h3>All Skill Levels</h3>
-        <p>Quick casual games and deep strategy titles. Something for a 5-minute break or a 2-hour session.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLATFORMS -->
-  <section class="platforms-section">
-    <div class="section-title">
-      <h2>Available on iOS &amp; Android</h2>
-      <p>Download free from your preferred store.</p>
-    </div>
-    <div class="platforms-grid">
-      <a class="platform-card" href="https://apps.apple.com/app/id6759455066">
-        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        <h3>iPhone &amp; iPad</h3>
-        <p>iOS 16+</p>
-        <span class="platform-dl">App Store</span>
-      </a>
-      <a class="platform-card" href="https://play.google.com/store/apps/details?id=com.offlinegamesroom.app">
-        <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.64.24.99.2l.1-.04 11.05-6.37-2.4-2.41-9.74 8.62zm-1.1-19.5C1.74 4.6 1.5 5.03 1.5 5.6v12.8c0 .57.24 1 .58 1.27l.07.06 7.17-7.17v-.17L2.08 4.26zm15.55 10.17-2.38-2.37-2.39 2.38 2.39 2.39 2.38-2.4zm1.72-7.59-3.1-1.79-2.72 2.72 2.72 2.71 3.1-1.79c.89-.51.89-1.35 0-1.85z"/></svg>
-        <h3>Android</h3>
-        <p>Android 8+</p>
-        <span class="platform-dl">Google Play</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <div class="cta-banner">
-    <h2>Ready to play?</h2>
-    <p>Download free on iOS or Android. No internet required — ever.</p>
-    <div class="cta-store-group">
-      <a class="btn-white" href="https://apps.apple.com/app/id6759455066">
-        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        <span class="btn-white-label">
-          <span class="btn-white-sub">Download on the</span>
-          <span class="btn-white-main">App Store</span>
-        </span>
-      </a>
-      <a class="btn-white" href="https://play.google.com/store/apps/details?id=com.offlinegamesroom.app">
-        <svg viewBox="0 0 24 24"><path d="M3.18 23.76c.3.17.64.24.99.2l.1-.04 11.05-6.37-2.4-2.41-9.74 8.62zm-1.1-19.5C1.74 4.6 1.5 5.03 1.5 5.6v12.8c0 .57.24 1 .58 1.27l.07.06 7.17-7.17v-.17L2.08 4.26zm15.55 10.17-2.38-2.37-2.39 2.38 2.39 2.39 2.38-2.4zm1.72-7.59-3.1-1.79-2.72 2.72 2.72 2.71 3.1-1.79c.89-.51.89-1.35 0-1.85z"/></svg>
-        <span class="btn-white-label">
-          <span class="btn-white-sub">Get it on</span>
-          <span class="btn-white-main">Google Play</span>
-        </span>
-      </a>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
-      <a href="https://colindiffer.github.io/privacy_policy_online_game.html">Privacy Policy</a>
       <a href="mailto:colindiffer@gmail.com">Contact</a>
     </div>
-    <div>© 2026 Classic Offline Games Room. All rights reserved.</div>
+    <div>© 2026 Colin Differ. All rights reserved.</div>
   </footer>
 
 </body>
