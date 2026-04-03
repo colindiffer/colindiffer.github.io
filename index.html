@@ -50,6 +50,20 @@
       letter-spacing: -0.3px;
     }
     nav .logo span { color: var(--coral); }
+    nav .nav-contact {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--coral);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 2px solid var(--coral);
+      border-radius: 100px;
+      transition: background .15s, color .15s;
+    }
+    nav .nav-contact:hover {
+      background: var(--coral);
+      color: #fff;
+    }
 
     /* HERO */
     .hero {
@@ -185,6 +199,128 @@
     }
     .app-links a:hover { color: var(--text); text-decoration: underline; }
 
+    /* CONTACT SECTION */
+    .contact-section {
+      padding: 0 24px 80px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .contact-section .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .contact-section .section-eyebrow {
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .contact-section h2 {
+      font-size: clamp(26px, 5vw, 36px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
+    .contact-section h2 em { font-style: normal; color: var(--coral); }
+    .contact-section .section-sub {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg);
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--text);
+      transition: border-color .15s;
+      outline: none;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: #aaa; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--coral);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: var(--coral);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 24px;
+      font-size: 15px;
+      font-weight: 800;
+      font-family: inherit;
+      cursor: pointer;
+      transition: transform .15s, opacity .15s;
+      margin-top: 4px;
+    }
+    .submit-btn:hover { transform: translateY(-2px); opacity: 0.88; }
+    .submit-btn:active { transform: translateY(0); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 24px 0 8px;
+    }
+    .form-success .success-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+    .form-success h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+    .form-success p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -199,6 +335,7 @@
 
     @media (max-width: 500px) {
       .apps-section { grid-template-columns: 1fr; }
+      .contact-card { padding: 28px 20px; }
     }
   </style>
 </head>
@@ -207,6 +344,7 @@
   <!-- NAV -->
   <nav>
     <div class="logo"><span>Colin</span> Differ</div>
+    <a class="nav-contact" href="#contact">Get Help</a>
   </nav>
 
   <!-- HERO -->
@@ -222,14 +360,14 @@
     <!-- Yonder Podcast -->
     <div class="app-card">
       <div class="app-card-header">
-        <div class="app-icon app-icon-podcast">🎙️</div>
+        <div class="app-icon app-icon-podcast">&#x1F399;&#xFE0F;</div>
         <div>
           <div class="app-card-title">Yonder Podcast</div>
           <div class="app-card-sub">Free podcast player</div>
         </div>
       </div>
       <p class="app-card-desc">
-        A clean, fast podcast player. Search and subscribe to any podcast, sync your library across devices, download episodes for offline listening, and pick up exactly where you left off — on any device.
+        A clean, fast podcast player. Search and subscribe to any podcast, sync your library across devices, download episodes for offline listening, and pick up exactly where you left off &mdash; on any device.
       </p>
       <div class="app-tags">
         <span class="tag">Podcast Player</span>
@@ -262,14 +400,14 @@
     <!-- Classic Offline Games Room -->
     <div class="app-card">
       <div class="app-card-header">
-        <div class="app-icon app-icon-games">🎮</div>
+        <div class="app-icon app-icon-games">&#x1F3AE;</div>
         <div>
           <div class="app-card-title">Classic Offline Games Room</div>
           <div class="app-card-sub">31 games, no internet needed</div>
         </div>
       </div>
       <p class="app-card-desc">
-        Chess, Sudoku, Snake, Solitaire, Mine Finder and 26 more classic games — all in one free app. Works completely offline. No accounts, no tracking, no internet required. Ever.
+        Chess, Sudoku, Snake, Solitaire, Mine Finder and 26 more classic games &mdash; all in one free app. Works completely offline. No accounts, no tracking, no internet required. Ever.
       </p>
       <div class="app-tags">
         <span class="tag">31 Games</span>
@@ -308,7 +446,7 @@
         </div>
       </div>
       <p class="app-card-desc">
-        A powerful interval timer for Tabata, HIIT, circuit training, and any workout routine. Build custom intervals, choose from 20 ready-made presets, and track your training history — all completely free.
+        A powerful interval timer for Tabata, HIIT, circuit training, and any workout routine. Build custom intervals, choose from 20 ready-made presets, and track your training history &mdash; all completely free.
       </p>
       <div class="app-tags">
         <span class="tag">Tabata</span>
@@ -340,13 +478,76 @@
 
   </section>
 
+  <!-- CONTACT SECTION -->
+  <!-- ================================================================
+       SETUP: Replace YOUR_FORM_ID below with your Formspree form ID.
+       1. Go to https://formspree.io and sign up (free, takes 30 sec)
+       2. Click "New Form", set destination to colindiffer@gmail.com
+       3. Copy your form ID (e.g. xyzabcde) and paste it in the action below
+       ================================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="section-header">
+      <div class="section-eyebrow">Support</div>
+      <h2>Need <em>help</em> with an app?</h2>
+      <p class="section-sub">Send a message and I&rsquo;ll get back to you as soon as I can.</p>
+    </div>
+
+    <div class="contact-card">
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Help with an App" />
+        <input type="hidden" name="_next" value="https://colindiffer.github.io/#contact" />
+
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="app">Which App?</label>
+          <select id="app" name="app" required>
+            <option value="" disabled selected>Select an app&hellip;</option>
+            <option value="Yonder Podcast">Yonder Podcast</option>
+            <option value="Classic Offline Games Room">Classic Offline Games Room</option>
+            <option value="Interval Timer: Tabata Workout">Interval Timer: Tabata Workout</option>
+            <option value="Other">Other / General</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Describe the issue or question&hellip;" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <div class="form-success" id="form-success">
+        <div class="success-icon">&#x2705;</div>
+        <h3>Message sent!</h3>
+        <p>Thanks for reaching out. I&rsquo;ll get back to you shortly.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-links">
       <a href="mailto:colindiffer@gmail.com">Contact</a>
     </div>
-    <div>© 2026 Colin Differ. All rights reserved.</div>
+    <div>&copy; 2026 Colin Differ. All rights reserved.</div>
   </footer>
+
+  <script>
+    if (window.location.hash === '#contact' && document.referrer.includes('formspree.io')) {
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
