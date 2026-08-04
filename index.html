@@ -134,6 +134,13 @@
       justify-content: center;
       font-size: 30px;
       flex-shrink: 0;
+      overflow: hidden;
+    }
+    .app-icon img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
     }
     .app-icon-podcast { background: linear-gradient(135deg, #6c3fc5 0%, #a259f7 100%); }
     .app-icon-games   { background: linear-gradient(135deg, #e8534a 0%, #f0836e 100%); }
@@ -440,7 +447,9 @@
     <!-- Flash Interval Timer Workout -->
     <div class="app-card">
       <div class="app-card-header">
-        <div class="app-icon app-icon-timer">&#x23F1;&#xFE0F;</div>
+        <div class="app-icon app-icon-timer">
+          <img src="flash-logo.png" alt="Flash Interval Timer Workout" />
+        </div>
         <div>
           <div class="app-card-title">Flash Interval Timer Workout</div>
           <div class="app-card-sub">Interval timer for HIIT, Tabata, and circuits</div>
