@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pick the Point — Logic puzzle for iPhone, iPad and Android</title>
+  <meta name="description" content="Pick the Point is a logic puzzle by DifferApps. Read the numbers around the board, work out which end of each hidden arrow is the point, and clear 2,000 levels. Support, FAQs and contact.">
+  <meta name="theme-color" content="#183153">
+  <link rel="icon" href="pick-the-point-icon.png" type="image/png">
+  <meta property="og:title" content="Pick the Point">
+  <meta property="og:description" content="Every arrow is hiding which way it points. Read the clues, pick the point, clear the board.">
+  <meta property="og:image" content="https://differapps.com/pick-the-point-icon.png">
+  <style>
+    :root { --navy:#183153; --navy-deep:#10233d; --ink:#173a32; --muted:#5e6b73; --sun:#f6d14c; --coral:#ef6a55; --mint:#3fc6a0; --sky:#6cc4f0; --paper:#fff8e8; --card:#fffdf8; --line:rgba(24,49,83,.14); }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--navy); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:#1f5fa8; }
+    .wrap { width:min(1040px,calc(100% - 32px)); margin:0 auto; }
+    .top { padding:22px 0; }
+    .top a { color:#fff; font-weight:800; text-decoration:none; opacity:.85; }
+    header.hero { background:var(--navy); color:#fff; padding:0 0 64px; position:relative; overflow:hidden; }
+    header.hero::after { content:"→"; position:absolute; right:-20px; bottom:-150px; font-size:460px; font-weight:900; line-height:1; color:rgba(246,209,76,.08); pointer-events:none; }
+    .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center; position:relative; z-index:1; }
+    .brand { display:flex; align-items:center; gap:18px; margin:18px 0 22px; }
+    .brand img { width:92px; height:92px; border-radius:22px; box-shadow:0 10px 30px rgba(0,0,0,.3); }
+    h1 { margin:0; font-size:clamp(40px,7vw,64px); line-height:1; letter-spacing:-.03em; font-weight:900; }
+    .tagline { font-size:clamp(19px,2.6vw,23px); font-weight:700; color:var(--sun); margin:0 0 16px; }
+    .hero p.lead { color:rgba(255,255,255,.86); font-size:18px; margin:0 0 26px; max-width:34em; }
+    .badges { display:flex; flex-wrap:wrap; gap:12px; }
+    .badge { display:inline-flex; align-items:center; min-height:48px; padding:10px 20px; border-radius:999px; font-weight:800; text-decoration:none; border:2.5px solid var(--navy-deep); box-shadow:3px 4px 0 var(--navy-deep); }
+    .badge.soon { background:var(--sun); color:var(--navy-deep); }
+    .badge.ghost { background:transparent; color:#fff; border-color:rgba(255,255,255,.5); box-shadow:none; }
+    .hero-shot { justify-self:center; width:min(300px,80vw); border-radius:34px; border:3px solid var(--navy-deep); box-shadow:10px 12px 0 rgba(0,0,0,.25); transform:rotate(2deg); }
+    section { padding:60px 0 0; }
+    h2 { font-size:clamp(28px,4vw,36px); line-height:1.1; margin:0 0 18px; letter-spacing:-.02em; font-weight:900; }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:0; padding:0; list-style:none; counter-reset:s; }
+    .steps li { counter-increment:s; background:var(--card); border:2.5px solid var(--navy); border-radius:22px; padding:20px; box-shadow:4px 5px 0 var(--navy); }
+    .steps li::before { content:counter(s); display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--coral); color:#fff; font-weight:900; border:2.5px solid var(--navy); margin-bottom:10px; }
+    .steps li:nth-child(2)::before { background:var(--sky); } .steps li:nth-child(3)::before { background:var(--mint); } .steps li:nth-child(4)::before { background:var(--sun); color:var(--navy); }
+    .steps strong { display:block; font-size:17px; margin-bottom:4px; }
+    .steps span { color:var(--muted); font-size:15px; }
+    .note { margin-top:18px; font-weight:700; }
+    .shots { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+    .shots img { width:100%; height:auto; border-radius:22px; border:2.5px solid var(--navy); box-shadow:4px 5px 0 var(--navy); background:#fff; }
+    .features { display:grid; grid-template-columns:repeat(2,1fr); gap:10px 28px; padding:0; list-style:none; }
+    .features li { padding-left:30px; position:relative; }
+    .features li::before { content:"→"; position:absolute; left:0; color:var(--coral); font-weight:900; }
+    .faq details { background:var(--card); border:2px solid var(--line); border-radius:18px; padding:16px 20px; margin-bottom:12px; }
+    .faq summary { font-weight:800; cursor:pointer; }
+    .faq details p { margin:10px 0 0; color:var(--muted); }
+    .contact { margin:60px 0 0; background:var(--navy); color:#fff; border-radius:28px; padding:34px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:18px; }
+    .contact h2 { margin:0 0 6px; } .contact p { margin:0; color:rgba(255,255,255,.8); }
+    .contact a.badge { background:var(--sun); color:var(--navy-deep); }
+    footer { padding:40px 0 60px; color:var(--muted); font-size:14px; }
+    footer a { margin-right:18px; }
+    @media (max-width:820px) {
+      .hero-grid { grid-template-columns:1fr; } .hero-shot { transform:none; }
+      .steps { grid-template-columns:repeat(2,1fr); } .shots { grid-template-columns:repeat(2,1fr); } .features { grid-template-columns:1fr; }
+    }
+    @media (max-width:460px) { .steps { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <nav class="top"><a href="index.html">← DifferApps</a></nav>
+      <div class="hero-grid">
+        <div>
+          <div class="brand"><img src="pick-the-point-icon.png" alt="Pick the Point app icon" width="92" height="92"><h1>Pick the Point</h1></div>
+          <p class="tagline">Read the clues. Find the point. Clear the board.</p>
+          <p class="lead">Every arrow is hiding which way it points. Read the numbers around the board, work it out, and tap the right end. 2,000 levels of clean, fair logic, and you never have to guess.</p>
+          <div class="badges">
+            <span class="badge soon">Coming soon to iPhone, iPad &amp; Android</span>
+            <a class="badge ghost" href="#support">Support</a>
+          </div>
+        </div>
+        <img class="hero-shot" src="pick-the-point-img/01_level8.jpg" alt="A Pick the Point level: winding arrows on a dark board with number clues around the edge" width="540" height="1173">
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>How it plays</h2>
+      <ol class="steps">
+        <li><strong>Read the numbers</strong><span>Each number says how many arrows still have to leave through that side of its row or column.</span></li>
+        <li><strong>Find the point</strong><span>Hidden arrows show a dot at both ends. Work out which end is really the arrowhead.</span></li>
+        <li><strong>Tap it</strong><span>Right end: the arrow slides off the board. Wrong end: you lose a heart.</span></li>
+        <li><strong>Clear the board</strong><span>Send every arrow out to finish the level and earn coins.</span></li>
+      </ol>
+      <p class="note">Every level can be solved with logic alone.</p>
+    </section>
+
+    <section>
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <img src="pick-the-point-img/02_level1.jpg" alt="An early level with a small board and edge clues" width="540" height="1173" loading="lazy">
+        <img src="pick-the-point-img/03_level12.jpg" alt="A larger level with tangled winding arrows" width="540" height="1173" loading="lazy">
+        <img src="pick-the-point-img/05_world1.jpg" alt="World 1 level map with chapters of level bubbles" width="540" height="1173" loading="lazy">
+        <img src="pick-the-point-img/01_level8.jpg" alt="A mid-sized level being solved" width="540" height="1173" loading="lazy">
+      </div>
+    </section>
+
+    <section>
+      <h2>What's inside</h2>
+      <ul class="features">
+        <li>2,000 levels across 20 worlds, from gentle warm-ups to big, tangled boards</li>
+        <li>Tap a number to highlight its row or column; it's ticked off once accounted for</li>
+        <li>Long-press an end to pencil in a guess for free</li>
+        <li>Reveal, Scan and Rewind boosters for when you're stuck</li>
+        <li>Crowns to collect, coins to earn, and Game Center on iOS</li>
+        <li>Bonus games between levels: Colour Count, Balloon Pop, Brick Breaker and Tower Jump</li>
+        <li>Pinch to zoom on bigger boards; light and dark themes; colourless arrows option</li>
+        <li>VoiceOver support; plays offline with no account</li>
+      </ul>
+    </section>
+
+    <section class="faq" id="support">
+      <h2>Support &amp; FAQs</h2>
+      <details><summary>I bought “No Ads” or coins but didn't get them</summary><p>Make sure you're signed in to the same Apple Account or Google account you bought with, then open the Shop and tap <strong>Restore purchases</strong>. “No Ads” restores on any device. Coin packs are consumable, so if coins didn't arrive, email us with the date of purchase and your store receipt and we'll sort it out.</p></details>
+      <details><summary>How do I get a refund?</summary><p>Payments are handled by Apple or Google, so refunds are requested through them: on iOS at reportaproblem.apple.com, on Android from your Google Play order history.</p></details>
+      <details><summary>Does “No Ads” remove every advert?</summary><p>It removes all adverts between levels. Optional “watch an ad for coins” videos stay available, but only play if you choose to watch one.</p></details>
+      <details><summary>How do I change my ad privacy choices?</summary><p>If your region requires consent (for example the UK and EU), open <strong>Settings → Privacy choices</strong> in the app. On iPhone you can also change tracking permission in <strong>Settings → Privacy &amp; Security → Tracking</strong>.</p></details>
+      <details><summary>Will my progress move to a new phone?</summary><p>Not yet. Progress is stored on your device and there's no cloud save. Purchases of “No Ads” can be restored on a new device.</p></details>
+      <details><summary>How do I start again?</summary><p>Open <strong>Settings</strong>, scroll to <strong>Danger Zone</strong> and tap <strong>Reset</strong>. This clears levels, coins, boosters and achievements; “No Ads” is kept. See <a href="delete_account_pick_the_point.html">deleting your data</a> for everything else.</p></details>
+      <details><summary>I'm stuck on a level</summary><p>Tap a number to highlight its row or column and count which arrows could still leave that way. When a number needs zero, every arrow in that line must point away; when it needs as many as there are candidates, they all point in. Reveal, Scan and Rewind boosters are there when you need a nudge.</p></details>
+    </section>
+
+    <div class="contact">
+      <div><h2>Still need help?</h2><p>Email us with your device model and what happened, and we'll help.</p></div>
+      <a class="badge" href="mailto:hello@differapps.com?subject=Pick%20the%20Point%20Support">hello@differapps.com</a>
+    </div>
+  </main>
+
+  <footer class="wrap">
+    <a href="privacy_policy_pick_the_point.html">Privacy policy</a>
+    <a href="delete_account_pick_the_point.html">Delete app data</a>
+    <a href="index.html">DifferApps</a>
+    <p>© 2026 DifferApps. Apple, iPhone and iPad are trademarks of Apple Inc. Google Play and Android are trademarks of Google LLC.</p>
+  </footer>
+</body>
+</html>
