@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Poop Loop: Sort & Flush — a cheeky sorting puzzle for iPhone, iPad and Android</title>
+<meta name="description" content="Poop Loop is a colourful tap-and-sort puzzle by DifferApps. Drop cute food characters onto the pipe, fill the tanks, and flush before it clogs. 3,789 levels. Support and FAQs.">
+<meta name="theme-color" content="#0B1E26">
+<link rel="icon" href="/poop-loop-icon.png" type="image/png">
+<meta property="og:title" content="Poop Loop: Sort & Flush — a cheeky sorting puzzle for iPhone, iPad and Android"><meta property="og:description" content="Poop Loop is a colourful tap-and-sort puzzle by DifferApps. Drop cute food characters onto the pipe, fill the tanks, and flush before it clogs. 3,789 levels. Support and FAQs."><meta property="og:image" content="https://differapps.com/poop-loop-icon.png">
+<style>
+:root{--bg:#0B1E26;--panel:#12303B;--panel2:#0F2831;--ink:#F1E8D0;--muted:#9DB8BF;--gold:#F2C14E;--cyan:#52D6EE;--line:rgba(241,232,208,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--cyan)}.wrap{width:min(1040px,calc(100% - 32px));margin:0 auto}
+.top{padding:18px 0}.top a{color:var(--ink);font-weight:800;text-decoration:none;opacity:.85}
+header.hero{background:radial-gradient(120% 120% at 70% 0,#1B4A58 0,#0B1E26 62%);padding-bottom:56px;border-bottom:6px solid var(--gold)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.brand{display:flex;align-items:center;gap:18px;margin:14px 0 20px}.brand img{width:92px;height:92px;border-radius:22px;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+h1{margin:0;font-size:clamp(40px,7vw,64px);line-height:1;letter-spacing:-.02em;font-weight:900}
+.tagline{font-size:clamp(19px,2.6vw,23px);font-weight:700;color:var(--gold);margin:0 0 16px}
+.lead{color:rgba(241,232,208,.88);font-size:18px;margin:0 0 24px;max-width:34em}
+.badges{display:flex;flex-wrap:wrap;gap:12px}
+.badge{display:inline-flex;align-items:center;min-height:48px;padding:10px 20px;border-radius:999px;font-weight:800;text-decoration:none;background:var(--gold);color:#201700}
+.badge.ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.hero-shot{justify-self:center;width:min(290px,78vw);height:auto;border-radius:28px;border:3px solid #061218;box-shadow:10px 12px 0 rgba(0,0,0,.35);transform:rotate(2deg)}
+section{padding:56px 0 0}h2{font-size:clamp(26px,4vw,34px);line-height:1.15;margin:0 0 16px;letter-spacing:-.01em}h3{margin:1.6em 0 .3em;font-size:19px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--gold);color:#201700;font-weight:900;margin-bottom:10px}
+.steps strong{display:block;font-size:17px;margin-bottom:4px}.steps span{color:var(--muted);font-size:15px}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.shots img{width:100%;height:auto;border-radius:18px;border:2px solid #061218;background:#061218}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 28px;padding:0;list-style:none}.features li{padding-left:28px;position:relative}.features li::before{content:"●";position:absolute;left:0;color:var(--gold)}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 20px;margin-bottom:12px}.faq summary{font-weight:800;cursor:pointer}.faq details p{margin:10px 0 0;color:var(--muted)}
+.contact{margin:56px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:30px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.contact h2{margin:0 0 4px}.contact p{margin:0;color:var(--muted)}
+footer{padding:40px 0 56px;color:var(--muted);font-size:14px}footer a{margin-right:18px}
+main.doc{width:min(760px,calc(100% - 32px));margin:0 auto;padding:12px 0 24px}
+main.doc .card{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:6px 26px 26px}
+main.doc h1{font-size:clamp(28px,5vw,36px);margin:.8em 0 .2em}main.doc h2{font-size:21px;margin:1.6em 0 .4em}
+table{border-collapse:collapse;width:100%;font-size:15px}td,th{border-top:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}.hero-shot{transform:none}.steps{grid-template-columns:1fr}.shots{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="top"><a href="/#apps">← DifferApps</a></div>
+<div class="hero-grid"><div>
+<div class="brand"><img src="/poop-loop-icon.png" alt="Poop Loop app icon" width="92" height="92"><h1>Poop Loop</h1></div>
+<p class="tagline">Sort it before you clog it.</p>
+<p class="lead">A cheeky, colourful sorting puzzle. Tap a tube, watch the cuties roll along the pipe, and fill the tanks to flush them clean. Plan your order or the pipe clogs.</p>
+<div class="badges"><span class="badge">Coming soon to iPhone, iPad and Android</span><a class="badge ghost" href="support.html">Support</a></div>
+</div><img class="hero-shot" src="/poop-loop-img/01-home.jpg" alt="Poop Loop home screen with the pipe wheel and Play button" width="300" height="652"></div>
+</div></header>
+<main class="wrap">
+<section><h2>How it plays</h2>
+<ol class="steps">
+<li><strong>Tap a tube</strong><span>Its next two pieces drop onto the pipe.</span></li>
+<li><strong>Ride to a tank</strong><span>Each piece takes a tank holding its colour, or an empty one.</span></li>
+<li><strong>Flush and win</strong><span>A full tank flushes clean. Empty every tube and tank to clear the level.</span></li>
+</ol>
+<p><strong>The catch:</strong> the pipe only holds so many pieces at once, so watch the LOAD meter. There is no timer, so take your time.</p></section>
+<section><h2>A look inside</h2>
+<div class="shots">
+<img src="/poop-loop-img/02-gameplay.jpg" alt="Three tanks filling with green, red and blue characters" loading="lazy" width="300" height="652">
+<img src="/poop-loop-img/04-junction.jpg" alt="A level with a junction switch and fogged tubes" loading="lazy" width="300" height="652">
+<img src="/poop-loop-img/03-crew.jpg" alt="The New Poop card introducing Carrot" loading="lazy" width="300" height="652">
+<img src="/poop-loop-img/01-home.jpg" alt="Poop Loop home screen" loading="lazy" width="300" height="652">
+</div></section>
+<section><h2>What's in it</h2>
+<ul class="features">
+<li>3,789 puzzle levels</li><li>Twelve food-inspired characters to meet</li>
+<li>Crossing, looping and portal pipes</li><li>Junction switches and diverter wheels</li>
+<li>Fog, padlocks, plugged tanks and sticky inlets</li><li>Wet wipes, hazard canisters and warp gates</li>
+<li>Plunger, Lamp and Flush boosters</li><li>Daily gift and coin rewards</li>
+</ul>
+<p>Poop Loop is free to play. It shows ads and offers optional coin packs as in-app purchases. You never need to buy anything to play.</p></section>
+<section class="faq"><h2>FAQ</h2>
+<details><summary>Is Poop Loop free?</summary><p>Yes. It contains ads and optional in-app purchases for coin packs, which you can use to buy extra boosters.</p></details>
+<details><summary>Does it need an account or an internet connection?</summary><p>There are no accounts. Your progress is saved on your device. Ads and purchases need an internet connection.</p></details>
+<details><summary>Can I get my purchases back on a new phone?</summary><p>Your progress is stored on your device, and coin packs are consumable purchases, so coins cannot be restored on a different device. If a purchase did not arrive, open the Store and tap “Restore purchases”, or email us.</p></details>
+<details><summary>The pipe clogged. What happened?</summary><p>The pipe holds a limited number of pieces. Each tap drops two, and pieces with no free tank keep circling. If more arrive than fit, it clogs. Try a different tap order, or use the Plunger or Flush booster.</p></details>
+</section>
+<div class="contact"><div><h2>Need a hand?</h2><p>Questions, feedback or a bug? Email us and include your device and what happened.</p></div><a class="badge" href="mailto:hello@differapps.com?subject=Poop%20Loop%20support">hello@differapps.com</a></div>
+</main>
+<footer><div class="wrap"><a href="/poop-loop/">Poop Loop</a><a href="/poop-loop/support.html">Support</a><a href="/poop-loop/privacy.html">Privacy policy</a><a href="/#apps">All DifferApps apps</a><div style="margin-top:10px">© 2026 DifferApps</div></div></footer>
+</body></html>
